@@ -23,6 +23,16 @@ class Car extends React.Component {
         console.log('Car componentWillUnmount')
     }
 
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('Car getDerivedStateFromProps', nextProps, prevState)
+        return prevState
+    }
+
+    getSnapshotBeforeUpdate() {
+        console.log('Car getSnapshotBeforeUpdate')
+        return null
+    }
+
     render() {
         console.log('Car render')
         let classes = [carStyles['input']]
