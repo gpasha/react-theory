@@ -5,12 +5,13 @@ import Car from './Car/Car'
 class App extends Component {
 
   constructor(props) {
+    console.log('App constructor')
     super(props)
     this.state = {
       cars: [
         {id: '1', name: 'Audi', year: 2018},
-        {id: '2', name: 'Ford', year: 2015},
-        {id: '3', name: 'Mazda', year: 2010}
+        // {id: '2', name: 'Ford', year: 2015},
+        // {id: '3', name: 'Mazda', year: 2010}
       ],
       pageTitle: 'React components',
       showCars: true
@@ -34,11 +35,22 @@ class App extends Component {
   }
   //method create the context => should bind() or arrow function use
   deleteHandler(id) {
-    const cars = [...this.state.cars].filter(car => car.id !== +id)
+    console.log('deleteHandler, id:', id)
+
+    const cars = [...this.state.cars].filter(car => car.id !== id)
     this.setState({cars})
   }
 
+  // componentWillMount() {
+  //   console.log('App componentWillMount')
+  // }
+
+  componentDidMount() {
+    console.log('App componentDidMount')
+  }
+
   render() {
+    console.log('App render')
 
     let carsList = null
 
