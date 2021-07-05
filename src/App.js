@@ -4,14 +4,17 @@ import Car from './Car/Car'
 
 class App extends Component {
 
-  state = {
-    cars: [
-      {id: '1', name: 'Audi', year: 2018},
-      {id: '2', name: 'Ford', year: 2015},
-      {id: '3', name: 'Mazda', year: 2010}
-    ],
-    pageTitle: 'React components',
-    showCars: true
+  constructor(props) {
+    super(props)
+    this.state = {
+      cars: [
+        {id: '1', name: 'Audi', year: 2018},
+        {id: '2', name: 'Ford', year: 2015},
+        {id: '3', name: 'Mazda', year: 2010}
+      ],
+      pageTitle: 'React components',
+      showCars: true
+    }
   }
 
   showCarsHandler = () => {
@@ -51,7 +54,9 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <h2>{this.state.pageTitle}</h2>        
+        {/* <h2>{this.state.pageTitle}</h2> */}
+        <h2>{this.props.title}</h2>
+              
         <button onClick={this.showCarsHandler}>Show Cars</button>
         
         {carsList}
