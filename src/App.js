@@ -41,7 +41,7 @@ class App extends Component {
   }
   //method create the context => should bind() or arrow function use
   deleteHandler(id) {
-    const cars = [...this.state.cars].filter(car => car.id != id)
+    const cars = [...this.state.cars].filter(car => car.id !== +id)
     this.setState({cars})
   }
 
