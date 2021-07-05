@@ -30,12 +30,6 @@ class App extends Component {
     })
   }
 
-  // changeTitleHandler = newTitle => {
-  //   this.setState({
-  //     pageTitle: newTitle
-  //   })
-  // }
-
   changeName(id, name) {
     let cars = [...this.state.cars].map(car => {
       if (car.id === id ) {
@@ -57,7 +51,6 @@ class App extends Component {
 
     if (this.state.showCars) {
       carsList = this.state.cars.map(car => {
-        // return <Car key={car.id} name={car.name} year={car.year} onChangeTitle={this.changeTitleHandler.bind(this, car.name)} />
         return <Car key={car.id}
                     name={car.name}
                     year={car.year}

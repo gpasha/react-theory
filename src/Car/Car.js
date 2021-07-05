@@ -2,6 +2,7 @@ import React from 'react'
 
 export default props => (
     <div style={{
+        minWidth: 400,
         padding: '1rem',
         margin: '1rem',
         border: '2px solid #ccc'
@@ -12,6 +13,5 @@ export default props => (
         <div>
             <button onClick={props.onDelete}>Delete</button>
         </div>
-        {/* <button onClick={props.onChangeTitle}>Change Title</button> */}
     </div>
 )
