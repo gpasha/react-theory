@@ -5,3 +5,23 @@
     border: 2px solid #ccc;
     box-shadow: 0 4px 5px 0px rgba(0, 0, 0, 0.14);
 }
+
+.input,
+.input:active,
+.input:focus {
+    border: 1px solid transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+.input.red {
+    border-color: red;
+}
+
+.input.green {
+    border-color: green;
+}
+
+.input.bold {
+    border-width: 2px;
+}
