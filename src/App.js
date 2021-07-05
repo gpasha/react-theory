@@ -24,16 +24,31 @@ class App extends Component {
     showCars: true
   }
 
-  changeTitleHandler = newTitle => {
-    this.setState({
-      pageTitle: newTitle
-    })
-  }
-
   showCarsHandler = () => {
     this.setState({
       showCars: !this.state.showCars
     })
+  }
+
+  // changeTitleHandler = newTitle => {
+  //   this.setState({
+  //     pageTitle: newTitle
+  //   })
+  // }
+
+  changeName(id, name) {
+    let cars = [...this.state.cars].map(car => {
+      if (car.id === id ) {
+        car.name = name
+      }
+      return car
+    })
+    this.setState({cars})
+  }
+  //method create the context => should bind() or arrow function use
+  deleteHandler(id) {
+    const cars = [...this.state.cars].filter(car => car.id != id)
+    this.setState({cars})
   }
 
   render() {
@@ -42,7 +57,12 @@ class App extends Component {
 
     if (this.state.showCars) {
       carsList = this.state.cars.map(car => {
-        return <Car key={car.id} name={car.name} year={car.year} onChangeTitle={this.changeTitleHandler.bind(this, car.name)} />
+        // return <Car key={car.id} name={car.name} year={car.year} onChangeTitle={this.changeTitleHandler.bind(this, car.name)} />
+        return <Car key={car.id}
+                    name={car.name}
+                    year={car.year}
+                    changeName={e => this.changeName(car.id, e.target.value)}
+                    onDelete={this.deleteHandler.bind(this, car.id)} />
       }) 
     }
 
