@@ -36,20 +36,22 @@ class App extends Component {
     })
   }
 
-  carsList = [...this.state.cars].map(car => {
-    return <Car key={car.id} name={car.name} year={car.year} onChangeTitle={this.changeTitleHandler.bind(this, car.name)} />
-  }) 
-
   render() {
+
+    let carsList = null
+
+    if (this.state.showCars) {
+      carsList = this.state.cars.map(car => {
+        return <Car key={car.id} name={car.name} year={car.year} onChangeTitle={this.changeTitleHandler.bind(this, car.name)} />
+      }) 
+    }
+
     return (
       <div className='App'>
         <h2>{this.state.pageTitle}</h2>        
         <button onClick={this.showCarsHandler}>Show Cars</button>
-        {
-         this.state.showCars
-          ? <div className='cars'>{this.carsList}</div>
-          : null
-        }
+        
+        {carsList}
 
       </div>
     )
