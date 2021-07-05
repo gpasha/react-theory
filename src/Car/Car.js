@@ -4,12 +4,9 @@ import './Car.css'
 export default props => {
     let classes = ['input']
 
-    if (props.name.length === 0) {
-        classes = [...classes, 'red']
-    }
-    else {
-        classes = [...classes, 'green']
-    }
+    classes = (props.name.length === 0)
+        ? classes = [...classes, 'red']
+        : classes = [...classes, 'green']
 
     if (props.name.length > 5) classes = [...classes, 'bold']
 
