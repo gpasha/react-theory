@@ -3,13 +3,13 @@ import Radium from 'radium'
 import carStyles from './Car.module.css'
 
 const Car = props => {
-    let classes = ['input']
+    let classes = [carStyles['input']]
 
     classes = (props.name.length === 0)
-        ? classes = [...classes, 'red']
-        : classes = [...classes, 'green']
+        ? classes = [...classes, carStyles['red']]
+        : classes = [...classes, carStyles['green']]
 
-    if (props.name.length > 5) classes = [...classes, 'bold']
+    if (props.name.length > 5) classes = [...classes, carStyles['bold']]
 
     const styles = {
         boxShadow: '0 4px 5px 0px rgba(0, 0, 0, 0.14)',
