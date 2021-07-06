@@ -1,5 +1,6 @@
 import React from 'react'
 import carStyles from './Car.module.css'
+import withClass from '../hoc/withClass'
 
 class Car extends React.Component {
 
@@ -13,7 +14,7 @@ class Car extends React.Component {
         if (this.props.name.length > 5) classes = [...classes, carStyles['bold']]
     
         return (
-            <div className={carStyles['car']}>
+            <>
                 <h3>Car name: {this.props.name}</h3>
                 <p>Year: {this.props.year}</p>
                 <input type='text'
@@ -23,9 +24,9 @@ class Car extends React.Component {
                 <div>
                     <button onClick={this.props.onDelete}>Delete</button>
                 </div>
-            </div>
+            </>
         )
     }
 }
 
-export default Car
+export default withClass(Car, carStyles['car'])
