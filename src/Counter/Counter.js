@@ -1,4 +1,5 @@
 import React from 'react'
+import CounterChild from '../CounterChild/CounterChild'
 
 export default class Counter extends React.Component {
 
@@ -26,6 +27,7 @@ export default class Counter extends React.Component {
                     <button onClick={this.addCounter.bind(this)}>Add</button>
                     <button onClick={this.removeCounter.bind(this)}>Remove</button>
                 </div>
+                <CounterChild />
             </>
         )
     }

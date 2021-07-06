@@ -16,7 +16,6 @@
 .input:active,
 .input:focus {
     border: 1px solid transparent;
-    /* outline: none; */
     outline: none;
     box-shadow: none;
 }
