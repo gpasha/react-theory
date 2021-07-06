@@ -47,11 +47,12 @@ class App extends Component {
     let carsList = null
 
     if (this.state.showCars) {
-      carsList = this.state.cars.map(car => {
+      carsList = this.state.cars.map((car, i) => {
         return (
           <ErrorBoundary key={car.id}>
             <Car name={car.name}
                  year={car.year}
+                 index={i}
                  changeName={e => this.changeName(car.id, e.target.value)}
                  onDelete={this.deleteHandler.bind(this, car.id)} />
           </ErrorBoundary>
