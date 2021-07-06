@@ -1,5 +1,4 @@
 import React from 'react'
-// import Radium from 'radium'
 import carStyles from './Car.module.css'
 
 class Car extends React.Component {
@@ -13,16 +12,8 @@ class Car extends React.Component {
     
         if (this.props.name.length > 5) classes = [...classes, carStyles['bold']]
     
-        const styles = {
-            boxShadow: '0 4px 5px 0px rgba(0, 0, 0, 0.14)',
-            ':hover': {
-                boxShadow: '0 4px 15px 0px rgba(0, 0, 0, 0.28)',
-                cursor: 'pointer'
-            }
-        }
-    
         return (
-            <div className={carStyles['car']} style={styles}>
+            <div className={carStyles['car']}>
                 <h3>Car name: {this.props.name}</h3>
                 <p>Year: {this.props.year}</p>
                 <input type='text'
@@ -37,5 +28,4 @@ class Car extends React.Component {
     }
 }
 
-// export default Radium(Car)
 export default Car
