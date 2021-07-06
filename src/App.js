@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Counter from './Counter/Counter'
 
 class App extends Component {
 
@@ -72,8 +73,8 @@ class App extends Component {
       <div className='App'>
         {/* <h2>{this.state.pageTitle}</h2> */}
         <h2>{this.props.title}</h2>
-              
-        <button onClick={this.showCarsHandler}>Show Cars</button>
+        <Counter />
+        <button onClick={this.showCarsHandler} style={{marginTop: '1rem'}}>Show Cars</button>
         
         {carsList}
 
