@@ -18,15 +18,11 @@ export default class Counter extends React.Component {
         }))
     }
 
-    styles = {
-        display: 'flex'
-    }
-
     render() {
         return (
             <>
                 <h3>{this.state.counter}</h3>
-                <div style={this.styles}>
+                <div style={{display: 'flex'}}>
                     <button onClick={this.addCounter.bind(this)}>Add</button>
                     <button onClick={this.removeCounter.bind(this)}>Remove</button>
                 </div>

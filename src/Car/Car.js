@@ -3,39 +3,8 @@ import React from 'react'
 import carStyles from './Car.module.css'
 
 class Car extends React.Component {
-    
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('Car shouldComponentUpdate')
-        console.log('Car shouldComponentUpdate nextProps:', nextProps)
-        console.log('Car shouldComponentUpdate nextState:', nextState)
-        return nextProps.name.trim() !== this.props.name.trim()
-    }
-
-    // componentWillUpdate() {
-    //     console.log('Car componentWillUpdate')
-    // }
-
-    componentDidUpdate() {
-        console.log('Car componentDidUpdate')
-    }
-
-    componentWillUnmount() {
-        console.log('Car componentWillUnmount')
-    }
-
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     console.log('Car getDerivedStateFromProps', nextProps, prevState)
-    //     return prevState
-    // }
-
-    // getSnapshotBeforeUpdate() {
-    //     console.log('Car getSnapshotBeforeUpdate')
-    //     return null
-    // }
 
     render() {
-        console.log('Car render')
-        
         let classes = [carStyles['input']]
 
         classes = (this.props.name.length === 0)

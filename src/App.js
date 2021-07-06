@@ -42,18 +42,8 @@ class App extends Component {
     const cars = [...this.state.cars].filter(car => car.id !== id)
     this.setState({cars})
   }
-
-  // componentWillMount() {
-  //   console.log('App componentWillMount')
-  // }
-
-  componentDidMount() {
-    console.log('App componentDidMount')
-  }
-
+  
   render() {
-    console.log('App render')
-
     let carsList = null
 
     if (this.state.showCars) {
